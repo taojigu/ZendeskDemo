@@ -30,7 +30,7 @@
                                 <rect key="frame" x="163" y="266" width="196" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="SetIdenity"/>
+                                <buttonConfiguration key="configuration" style="plain" title="SetIdentity"/>
                                 <connections>
                                     <action selector="identityButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kAe-Pm-oLv"/>
                                 </connections>

@@ -31,15 +31,20 @@
 
 - (IBAction)initClicked:(id)sender{
     
-    [ZDKZendesk initializeWithAppId: @"Your AppID"
-        clientId: @"Your ClientID"
-        zendeskUrl: @"Your url"];
+    NSString* appId = @"Your Appid";
+    NSString* clientId = @"Your clientId";
+    NSString* zendeskUrl = @"zendesk url";
+    NSString* accountKey = @"your account key";
+    
+    [ZDKZendesk initializeWithAppId: appId
+        clientId: clientId
+        zendeskUrl: zendeskUrl];
     
     [ZDKMessaging initialize];
     [ZDKSupport initializeWithZendesk: [ZDKZendesk instance]];
     
     [ZDKAnswerBot initializeWithZendesk:[ZDKZendesk instance] support:[ZDKSupport instance]];
-    [ZDKChat initializeWithAccountKey: @"Your Account Key" queue: dispatch_get_main_queue()];
+    [ZDKChat initializeWithAccountKey: accountKey queue: dispatch_get_main_queue()];
     
 }
 
