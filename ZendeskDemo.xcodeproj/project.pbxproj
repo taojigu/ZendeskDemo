@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5FE2304EDF23EF5CA2CF8E6A /* Pods_ZendeskDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06940BE788D07D1E95E5433C /* Pods_ZendeskDemo.framework */; };
 		C4AFB5BC28BE025800643E46 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C4AFB5BB28BE025800643E46 /* AppDelegate.m */; };
 		C4AFB5BF28BE025800643E46 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C4AFB5BE28BE025800643E46 /* SceneDelegate.m */; };
 		C4AFB5C228BE025800643E46 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4AFB5C128BE025800643E46 /* ViewController.m */; };
@@ -17,6 +18,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		06940BE788D07D1E95E5433C /* Pods_ZendeskDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZendeskDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DAA7FDBA2A81601D577F173 /* Pods-ZendeskDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZendeskDemo.debug.xcconfig"; path = "Target Support Files/Pods-ZendeskDemo/Pods-ZendeskDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		C416FF163447D7613FC4441E /* Pods-ZendeskDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZendeskDemo.release.xcconfig"; path = "Target Support Files/Pods-ZendeskDemo/Pods-ZendeskDemo.release.xcconfig"; sourceTree = "<group>"; };
 		C4AFB5B728BE025800643E46 /* ZendeskDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZendeskDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4AFB5BA28BE025800643E46 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C4AFB5BB28BE025800643E46 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -36,17 +40,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FE2304EDF23EF5CA2CF8E6A /* Pods_ZendeskDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1C91330E49A190087E040E2B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1DAA7FDBA2A81601D577F173 /* Pods-ZendeskDemo.debug.xcconfig */,
+				C416FF163447D7613FC4441E /* Pods-ZendeskDemo.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		81CF80E91C08D2EECC426BC9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				06940BE788D07D1E95E5433C /* Pods_ZendeskDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C4AFB5AE28BE025800643E46 = {
 			isa = PBXGroup;
 			children = (
 				C4AFB5B928BE025800643E46 /* ZendeskDemo */,
 				C4AFB5B828BE025800643E46 /* Products */,
+				1C91330E49A190087E040E2B /* Pods */,
+				81CF80E91C08D2EECC426BC9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -83,9 +108,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C4AFB5D028BE025900643E46 /* Build configuration list for PBXNativeTarget "ZendeskDemo" */;
 			buildPhases = (
+				4E4A0A752A78F1005DFD6AC2 /* [CP] Check Pods Manifest.lock */,
 				C4AFB5B328BE025800643E46 /* Sources */,
 				C4AFB5B428BE025800643E46 /* Frameworks */,
 				C4AFB5B528BE025800643E46 /* Resources */,
+				D5C80CF4CD51CCEBDB400887 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -140,6 +167,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4E4A0A752A78F1005DFD6AC2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ZendeskDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D5C80CF4CD51CCEBDB400887 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ZendeskDemo/Pods-ZendeskDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ZendeskDemo/Pods-ZendeskDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ZendeskDemo/Pods-ZendeskDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C4AFB5B328BE025800643E46 /* Sources */ = {
@@ -287,6 +356,7 @@
 		};
 		C4AFB5D128BE025900643E46 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1DAA7FDBA2A81601D577F173 /* Pods-ZendeskDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -313,6 +383,7 @@
 		};
 		C4AFB5D228BE025900643E46 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C416FF163447D7613FC4441E /* Pods-ZendeskDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
